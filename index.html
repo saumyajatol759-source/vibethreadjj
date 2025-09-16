@@ -1,0 +1,426 @@
+<!-- Save as index.html and open in a browser -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Vibe Thread — Wear Your Vibe</title>
+
+  <meta name="description" content="The Vibe Thread — Minimal luxury, interactive clothing for teens. QR codes, AR prints, limited drops.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --navy:#0b2545;
+      --white:#ffffff;
+      --muted:#f5f7fb;
+      --accent:#0b2545;
+      --shadow: 0 8px 30px rgba(11,37,69,0.07);
+      --radius:14px;
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:var(--navy);background:linear-gradient(180deg,var(--white),#f7fbff 100%);
+      -webkit-font-smoothing:antialiased;
+    }
+    .container{max-width:var(--max-width);margin:0 auto;padding:24px;}
+
+    header{position:sticky;top:0;background:transparent;padding:14px 0;z-index:30;backdrop-filter: blur(6px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--navy)}
+    .logo{width:52px;height:52px;border-radius:12px;background:var(--navy);color:white;font-weight:800;display:flex;align-items:center;justify-content:center}
+    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    nav a{text-decoration:none;color:var(--navy);font-weight:600}
+    .cta{background:var(--navy);color:white;padding:10px 14px;border-radius:10px;border:0;cursor:pointer}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;margin-top:12px}
+    .hero h1{font-size:44px;margin:0;line-height:1.03}
+    .tag{color:#33506f;margin-top:12px}
+    .hero-right{border-radius:16px;padding:12px;background:linear-gradient(180deg,rgba(11,37,69,0.04),rgba(11,37,69,0.02));box-shadow:var(--shadow)}
+
+    /* sections */
+    section{padding:36px 0}
+    .section-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px}
+    .section-title h2{margin:0}
+    .muted{color:#6c8aa6}
+
+    /* grid */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:white;border-radius:12px;padding:14px;border:1px solid #eef6ff;box-shadow:0 6px 20px rgba(11,37,69,0.03)}
+    .product-thumb{width:100%;height:220px;object-fit:cover;border-radius:10px;background:#eef6ff}
+
+    /* timeline */
+    .timeline{display:flex;gap:12px;flex-wrap:wrap}
+    .timeline .step{background:white;padding:16px;border-radius:12px;flex:1;min-width:220px;border:1px solid #eef6ff}
+
+    /* responsive */
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      .grid{grid-template-columns:1fr}
+      nav ul{display:none}
+    }
+
+    /* footer */
+    footer{border-top:1px solid #eef6ff;padding:22px 0;margin-top:22px;color:#33506f}
+    .btn-ghost{background:transparent;border:1px solid #e8eef7;padding:10px 12px;border-radius:10px;cursor:pointer}
+    .small{font-size:13px}
+    .insta{display:flex;gap:12px;align-items:center}
+    .qr{width:120px;height:120px;border-radius:8px;background:#fff;display:grid;place-items:center;border:1px dashed #dfeefb}
+    .center{text-align:center}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">
+        <div class="logo" id="logo">TVT</div>
+        <div>
+          <div style="font-weight:800">The Vibe Thread</div>
+          <div class="small muted">Wear Your Vibe — Interactive • Affordable • Authentic</div>
+        </div>
+      </a>
+
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#gameplan">Game Plan</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="btn-ghost" href="https://www.instagram.com/the_vibe_thread11" target="_blank" rel="noopener">Instagram</a>
+        <button class="cta" onclick="scrollTo('shop')">Shop</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1>Wear your vibe. Tell your story.</h1>
+        <div class="tag">Minimal-luxury streetwear for teens — interactive prints, QR secrets, and curated drops.</div>
+        <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
+          <button class="cta" onclick="scrollTo('shop')">Shop New Drop</button>
+          <button class="btn-ghost" onclick="scrollTo('vision')">Our Vision</button>
+        </div>
+
+        <div style="margin-top:20px;display:flex;gap:12px;align-items:center">
+          <div style="background:#e9f1ff;padding:10px;border-radius:10px"><strong>Teen priced</strong> — ₹600–₹1900</div>
+          <div class="muted small">Limited editions • Personalized drops</div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <!-- hero image placeholder -->
+        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=a0a6b78cb1d6f91f2f0b9bfa6a1d2b2f" alt="Hero" style="width:100%;border-radius:12px">
+      </div>
+    </section>
+
+    <!-- VISION (from your PPT) -->
+    <section id="vision">
+      <div class="section-title">
+        <h2>Vision — Beyond Basic Fashion</h2>
+        <div class="muted small">Interactive clothing with stories & tech.</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:start">
+        <div>
+          <p class="muted">We craft interactive clothing for teenagers — QR codes unlock exclusive content, AR prints come alive, and every piece carries a hidden message or story. Not just clothes — clothes with vibes & stories. A youth brand run by teenagers, for teenagers.</p>
+          <ul>
+            <li><strong>QR content:</strong> Exclusive drops, secret playlists, collab access.</li>
+            <li><strong>AR prints:</strong> Designs that animate on your phone.</li>
+            <li><strong>Personalized drops:</strong> Custom names, dates & event prints.</li>
+          </ul>
+        </div>
+
+        <div style="background:#fff;border-radius:12px;padding:14px;border:1px solid #eef6ff">
+          <h4 style="margin:0 0 8px 0">Quick facts</h4>
+          <div class="small muted">From the PPT:</div>
+          <ul class="small">
+            <li>Interactive Fashion — QR & AR</li>
+            <li>Teen-friendly pricing: ₹600–₹1900</li>
+            <li>Limited edition & personalized drops</li>
+          </ul>
+          <div style="margin-top:12px" class="center">
+            <div class="qr">QR</div>
+            <div class="small muted" style="margin-top:8px">Sample QR for interactive demo</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME PLAN (from PPT) -->
+    <section id="gameplan">
+      <div class="section-title">
+        <h2>Our Game Plan</h2>
+        <div class="muted small">How we grow & connect.</div>
+      </div>
+
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);">
+        <div class="card">
+          <h3>Interactive Fashion</h3>
+          <p class="muted small">QR codes unlock exclusive content. AR prints come alive through phone cameras.</p>
+        </div>
+        <div class="card">
+          <h3>Personalized Drops</h3>
+          <p class="muted small">Custom names, dates, events — limited edition runs to keep hype & scarcity.</p>
+        </div>
+        <div class="card">
+          <h3>Teen-Friendly Pricing</h3>
+          <p class="muted small">Affordable luxury feel. Price range: <strong>₹600–₹1900</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVENUE & GROWTH -->
+    <section id="revenue">
+      <div class="section-title">
+        <h2>Revenue & Growth Strategy</h2>
+        <div class="muted small">Sane margins & multiple sales channels</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+        <div class="card">
+          <h3>Profit & Model</h3>
+          <p class="muted small">Target profit margin: <strong>35–50%</strong>. Healthy margins on each sale through smart sourcing and limited drops.</p>
+          <p class="muted small">Startup capital target: <strong>₹25,000</strong> (low barrier to entry). Direct online + college pop-ups for fast growth.</p>
+        </div>
+
+        <div class="card">
+          <h3>Channels</h3>
+          <ul class="small muted">
+            <li>Direct online store (this website)</li>
+            <li>College pop-ups & bulk orders</li>
+            <li>Influencer collabs & premium limited editions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAUNCH TIMELINE -->
+    <section id="timeline">
+      <div class="section-title">
+        <h2>Launch Timeline</h2>
+        <div class="muted small">Quick ramp plan</div>
+      </div>
+
+      <div class="timeline">
+        <div class="step">
+          <h4>Month 1</h4>
+          <p class="small muted">Instagram launch + first drop</p>
+        </div>
+        <div class="step">
+          <h4>Month 2</h4>
+          <p class="small muted">College pop-ups + offline sales</p>
+        </div>
+        <div class="step">
+          <h4>Month 3</h4>
+          <p class="small muted">Website launch + influencer collabs</p>
+        </div>
+        <div class="step">
+          <h4>Month 4+</h4>
+          <p class="small muted">Scale designs + accessories</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOP (simple product grid + AR demo button) -->
+    <section id="shop">
+      <div class="section-title">
+        <h2>Shop — New Arrivals</h2>
+        <div class="muted small">Curated for the teen aesthetic • Navy & white edit</div>
+      </div>
+
+      <div id="productGrid" class="grid">
+        <!-- JS injects products -->
+      </div>
+    </section>
+
+    <!-- AR & QR demo -->
+    <section id="ar">
+      <div class="section-title">
+        <h2>AR Preview & QR Demo</h2>
+        <div class="muted small">Demo of interactive features (prototype)</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start">
+        <div class="card">
+          <h3>Try AR Preview (demo)</h3>
+          <p class="muted small">This is a simple webcam overlay demo to show how prints could animate. For production integrate a WebAR SDK (8th Wall / Apple ARKit / WebXR).</p>
+          <div style="margin-top:12px">
+            <button class="cta" onclick="openAR()">Open AR Preview</button>
+            <button class="btn-ghost" onclick="downloadQR()">Download demo QR</button>
+          </div>
+        </div>
+
+        <div class="card center">
+          <h4 class="small muted">Sample QR (interactive)</h4>
+          <div class="qr" id="sampleQR">QR</div>
+          <div class="small muted" style="margin-top:8px">Scan to view a demo page (placeholder)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / Join -->
+    <section id="cta" style="padding-bottom:8px">
+      <div style="background:linear-gradient(90deg, rgba(11,37,69,0.06), rgba(11,37,69,0.02));padding:20px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <div>
+          <h3 style="margin:0">Wear Your Vibe — Join the VibeThread Revolution</h3>
+          <div class="muted small">Interactive • Affordable • Authentic. Sign up for drops & college pop-up invites.</div>
+        </div>
+        <form id="joinForm" style="display:flex;gap:8px">
+          <input type="email" id="joinEmail" placeholder="Your email" required style="padding:10px;border-radius:8px;border:1px solid #e8eef7">
+          <button class="cta" type="submit">Join</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- contact & instagram -->
+    <section id="contact">
+      <div class="section-title">
+        <h2>Contact & Instagram</h2>
+        <div class="muted small">Follow @the_vibe_thread11 and reach out for collabs</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 300px;gap:18px;align-items:start">
+        <div class="card">
+          <h4>Contact</h4>
+          <p class="muted small">Email: <a href="mailto:hello@thevibethread.com">hello@thevibethread.com</a></p>
+          <p class="muted small">Bulk & college orders available — message us on Instagram.</p>
+        </div>
+
+        <div class="card insta">
+          <div style="flex:1">
+            <div style="font-weight:700">Instagram</div>
+            <div class="small muted">@the_vibe_thread11</div>
+            <a class="btn-ghost" href="https://www.instagram.com/the_vibe_thread11" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px">Open Instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+        <div class="small muted">© The Vibe Thread — Wear Your Vibe</div>
+        <div class="small muted">Made with ♥ • Minimal luxury • Navy & White</div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- AR modal / video -->
+  <div id="arModal" style="display:none;position:fixed;inset:0;background:rgba(3,10,20,0.6);z-index:90;place-items:center;padding:16px">
+    <div style="max-width:920px;background:white;border-radius:12px;padding:16px">
+      <h3 style="margin-top:0">AR Preview (demo)</h3>
+      <p class="muted small">Allow camera for demo overlay. For production integrate a real AR SDK.</p>
+      <video id="arVideo" autoplay playsinline style="width:100%;height:420px;background:#000;border-radius:8px"></video>
+      <div style="display:flex;gap:8px;margin-top:12px;justify-content:flex-end">
+        <button onclick="closeAR()" class="btn-ghost">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ---------- Content: products (replace with real images/data) ---------- */
+    const products = [
+      {id:'p1',title:'Navy Oversized Tee',price:1199,img:'https://images.unsplash.com/photo-1520975916004-9c881f0f5d6b?q=80&w=1200&auto=format&fit=crop'},
+      {id:'p2',title:'White Minimal Hoodie',price:2499,img:'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1200&auto=format&fit=crop'},
+      {id:'p3',title:'Navy Track Pants',price:1599,img:'https://images.unsplash.com/photo-1534126511673-b6899657816a?q=80&w=1200&auto=format&fit=crop'}
+    ];
+    const productGrid = document.getElementById('productGrid');
+    function rupee(n){ return '₹' + Number(n).toLocaleString('en-IN'); }
+    function renderProducts(){
+      productGrid.innerHTML = '';
+      products.forEach(p=>{
+        const el = document.createElement('article');
+        el.className = 'card';
+        el.innerHTML = `
+          <img class="product-thumb" src="${p.img}" alt="${p.title}">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div><div style="font-weight:700">${p.title}</div><div class="small muted">Limited drop</div></div>
+            <div style="font-weight:800">${rupee(p.price)}</div>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:10px">
+            <button class="btn-ghost" onclick='openProduct("${p.id}")'>View</button>
+            <button class="cta" onclick='addToCart("${p.id}")'>Add</button>
+          </div>
+        `;
+        productGrid.appendChild(el);
+      });
+    }
+    renderProducts();
+
+    /* ---------- Simple cart (demo) ---------- */
+    const cart = {};
+    function addToCart(id){
+      cart[id] = (cart[id] || 0) + 1;
+      alert('Added to cart (demo). Use real backend to process orders.');
+    }
+    function openProduct(id){
+      const p = products.find(x=>x.id===id);
+      alert(`${p.title}\nPrice: ${rupee(p.price)}\n\nDescription: Limited interactive drop. Replace with real page.`);
+    }
+
+    /* ---------- AR demo (very simple webcam preview) ---------- */
+    let arStream = null;
+    async function openAR(){
+      document.getElementById('arModal').style.display = 'grid';
+      const v = document.getElementById('arVideo');
+      try {
+        arStream = await navigator.mediaDevices.getUserMedia({video:{facingMode:'user'}});
+        v.srcObject = arStream;
+      } catch(err){
+        alert('Camera access denied or not available. AR preview needs camera permission.');
+        closeAR();
+      }
+    }
+    function closeAR(){
+      document.getElementById('arModal').style.display = 'none';
+      if(arStream){ arStream.getTracks().forEach(t=>t.stop()); arStream = null; }
+      const v = document.getElementById('arVideo'); v.srcObject = null;
+    }
+
+    /* ---------- QR download (placeholder) ---------- */
+    function downloadQR(){
+      // simple placeholder: generate a small canvas with text and export as image
+      const c = document.createElement('canvas'); c.width=300; c.height=300;
+      const ctx = c.getContext('2d');
+      ctx.fillStyle = '#fff'; ctx.fillRect(0,0,300,300);
+      ctx.fillStyle = '#0b2545'; ctx.font = '16px Inter, sans-serif'; ctx.fillText('The Vibe Thread', 20,150);
+      const link = document.createElement('a');
+      link.download = 'tvthread-qr-demo.png';
+      link.href = c.toDataURL('image/png');
+      link.click();
+      alert('Downloaded demo QR image (placeholder). Replace with real QR linking to interactive content.');
+    }
+
+    /* ---------- Join form ---------- */
+    document.getElementById('joinForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const em = document.getElementById('joinEmail').value;
+      document.getElementById('joinEmail').value = '';
+      alert(`Thanks! ${em} added (demo). We'll notify you for drops and pop-ups.`);
+    });
+
+    function scrollTo(id){
+      const el = document.getElementById(id);
+      if(el) el.scrollIntoView({behavior:'smooth'});
+    }
+
+    // Small: open Insta in a new tab when clicking logo area
+    document.getElementById('logo').addEventListener('click', ()=> window.open('https://www.instagram.com/the_vibe_thread11', '_blank'));
+
+    // NOTE: This page uses content from your uploaded PPT (vision, gameplan, timeline, pricing). Source: your file. 
+    // See the PPT for original slides & copy. (File used during build.)
+  </script>
+</body>
+</html>
